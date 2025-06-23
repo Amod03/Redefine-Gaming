@@ -141,6 +141,7 @@ useEffect(() => {
             ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
             loop
+            playsInline
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
@@ -153,6 +154,7 @@ useEffect(() => {
             autoPlay
             loop
             muted
+            playsInline
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
