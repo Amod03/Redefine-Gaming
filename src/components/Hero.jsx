@@ -19,9 +19,16 @@ const Hero = () => {
   const totalVideos = 4;
   const nextVdRef = useRef(null);
 
-  const handleVideoLoad = () => {
-    setLoadedVideos((prev) => prev + 1);
-  };
+const handleVideoLoad = () => {
+  setLoadedVideos((prev) => {
+    const next = prev + 1;
+    if (next >= totalVideos) {
+      setLoading(false);
+    }
+    return next;
+  });
+};
+
 
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) {
