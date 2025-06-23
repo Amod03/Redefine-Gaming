@@ -29,6 +29,15 @@ const handleVideoLoad = () => {
   });
 };
 
+useEffect(() => {
+  const fallbackTimeout = setTimeout(() => {
+    setLoading(false);
+  }, 5000); // force-hide after 5 seconds
+
+  return () => clearTimeout(fallbackTimeout);
+}, []);
+
+
 
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) {
